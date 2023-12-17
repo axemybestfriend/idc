@@ -1,4 +1,9 @@
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.Comparator;
 
 public class test
 {
@@ -42,7 +47,21 @@ public class test
         a.turnOff();
 
         System.out.println(a.toString()); 
-                
+        
+        
+        ArrayList<WirelessHeadphone> wh = new ArrayList<>();
+        wh.add(d);
+        wh.add(d);
+        wh.add(d);
+        wh.add(IlV);
+        Comparator<Product> compareByid = Comparator.comparing(Product::getid);
+        ArrayList<Product> sortedPerson = wh.stream().sorted(compareByid).collect(Collectors.toCollection(ArrayList::new));
+        int size=wh.size();  
+        for(int i=0;i<size;i++) {
+            if(wh.get(i).equals(d)) {
+                wh.get(i).outputWirelessHeadphone();
+            }
+        }
         scanner.close();
     }
 }

@@ -47,4 +47,7 @@ public class WirelessHeadphone <T> extends Headphone {
     public WirelessHeadphone clone() throws CloneNotSupportedException {
         return (WirelessHeadphone) super.clone();
     }
+    public int compare(WirelessHeadphone a, WirelessHeadphone b){
+        return a.id - b.id;
+    }
 }
